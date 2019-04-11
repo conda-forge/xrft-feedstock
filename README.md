@@ -1,7 +1,7 @@
 About xrft
 ==========
 
-Home: https://github.com/rabernat/xrft
+Home: https://github.com/xgcm/xrft
 
 Package license: MIT
 
