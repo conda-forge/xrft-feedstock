@@ -27,6 +27,7 @@ requirements:
     - docrep
     - future
     - numpy
+    - scipy
     - xarray
 
 test:
