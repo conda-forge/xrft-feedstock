@@ -1,5 +1,5 @@
 {% set name = "xrft" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,12 +8,11 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/xgcm/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: "d14826a56642ff70f67f0e7d3122d26aaee9636bc00cc1637d5f631f2879354c"
-  
+  sha256: 4278ab7da8e17570201ef1b952ac5e7ed0cc732487862ba792f4714dd41b3fa6
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -40,7 +39,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Fourier transforms for xarray data'
+  summary: Fourier transforms for xarray data
   dev_url: https://github.com/xgcm/xrft
 
 extra:
