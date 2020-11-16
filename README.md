@@ -5,11 +5,11 @@ Home: https://github.com/xgcm/xrft
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/xrft-feedstock/blob/master/LICENSE.txt)
 
 Summary: Fourier transforms for xarray data
 
-
+Development: https://github.com/xgcm/xrft
 
 Current build status
 ====================
