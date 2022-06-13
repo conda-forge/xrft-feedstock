@@ -1,5 +1,5 @@
 {% set name = "xrft" %}
-{% set version = "0.4.1" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/xgcm/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 51705777f078830da7b4f6b72447f4e52179caaa05cc3e51fd6be6851cfc885e
+  sha256: ccb1deee04729f9d6e0b4bb7ba2227f85844112e6ca2cfde9c41a13ad129cd8b
 build:
   noarch: python
   number: 0
