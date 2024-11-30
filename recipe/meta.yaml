@@ -11,17 +11,17 @@ source:
   sha256: 4797f2d9359c294fdc357e6213b34584b50b2920e54b6c8d85a9df2bfed7cade
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools
     - pytest-runner
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - dask
     - docrep
     - future
@@ -30,6 +30,8 @@ requirements:
     - xarray
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - xrft
     - xrft.tests
