@@ -19,7 +19,7 @@ requirements:
     - pip
     - python {{ python_min }}
     - pytest-runner
-    - setuptools>=45
+    - setuptools >=45
     - setuptools_scm[toml] >=7.0
     - wheel
   run:
