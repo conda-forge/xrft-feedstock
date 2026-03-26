@@ -11,15 +11,17 @@ source:
   sha256: 7b754247a594bdc328a53145bc4a4998328820df2bd721fc27bf752b8726b895
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
     - pip
     - python {{ python_min }}
-    - setuptools
     - pytest-runner
+    - setuptools>=45
+    - setuptools_scm[toml] >=7.0
+    - wheel
   run:
     - python >={{ python_min }}
     - dask
