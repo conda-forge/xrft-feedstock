@@ -1,0 +1,64 @@
+schema_version: 1
+
+context:
+  version: "1.0.2"
+
+package:
+  name: xrft
+  version: ${{ version }}
+
+source:
+  url: https://github.com/xgcm/xrft/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: 7b754247a594bdc328a53145bc4a4998328820df2bd721fc27bf752b8726b895
+
+build:
+  number: 1
+  noarch: python
+  script:
+    - SETUPTOOLS_SCM_PRETEND_VERSION_FOR_XRFT=${{ version }} ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=45
+    - setuptools-scm >=6.0
+    - setuptools_scm_git_archive
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - xarray
+    - dask-core
+    - numpy
+    - pandas
+    - scipy
+    # These are in the metadata, but were in the precious recipe.
+    - docrep
+    - future
+
+tests:
+  - python:
+      imports:
+        - xrft
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - python -c "import xrft; assert xrft.__version__ != '0.0.0'"
+
+about:
+  summary: Discrete Fourier Transform with xarray
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/xgcm/xrft
+  repository: https://github.com/xgcm/xrft
+  documentation: https://xrft.readthedocs.io/en/latest/
+
+extra:
+  recipe-maintainers:
+    - kynan
+    - rabernat
+    - roxyboy
